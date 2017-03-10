@@ -1,6 +1,6 @@
 {
   "name": "eip-rabbit",
-  "description": "Rabbitmq Adapter for the eip module. It supports a Timer using rabbitmq queues.",
+  "description": "Rabbitmq Adapter for the eip module. It supports an aggregator Timer using rabbitmq queues.",
   "version": "0.0.1",
   "dependencies": {
     "log4js": "^1.1.0"
