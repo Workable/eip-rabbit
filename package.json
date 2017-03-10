@@ -1,0 +1,51 @@
+{
+  "name": "eip-rabbit",
+  "description": "Rabbitmq Adapter for the eip module. It supports a Timer using rabbitmq queues.",
+  "version": "0.0.1",
+  "dependencies": {
+    "log4js": "^1.1.0"
+  },
+  "peerDependencies": {
+    "eip": "^1.0.2",
+    "rabbit-queue": "2.0.2"
+  },
+  "main": "build/lib/index.js",
+  "typings": "build/index",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "prebuild": "npm run clean",
+    "build": "tsc -p .",
+    "prewatch": "npm run clean",
+    "watch": "tsc -w -p .",
+    "prepublish": "npm test",
+    "pretest": "tslint src/*.ts && npm run build",
+    "test": "istanbul test ./node_modules/.bin/_mocha build/test -- --recursive -R spec",
+    "posttest": "remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html"
+  },
+  "author": "Nikos Kostoulas <kostoulas@workable.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/amqplib": "0.5.1",
+    "@types/log4js": "0.0.32",
+    "@types/mocha": "2.2.38",
+    "@types/node": "6.0.40",
+    "@types/node-uuid": "0.0.28",
+    "@types/should": "8.1.30",
+    "@types/sinon": "1.16.34",
+    "@types/source-map-support": "0.2.28",
+    "@types/supertest": "2.0.0",
+    "@types/uuid": "2.0.29",
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0",
+    "remap-istanbul": "0.8.4",
+    "should": "11.2.0",
+    "sinon": "1.17.7",
+    "source-map-support": "^0.4.5",
+    "tslint": "4.5.1",
+    "typescript": "^2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Workable/eip-rabbit"
+  }
+}
