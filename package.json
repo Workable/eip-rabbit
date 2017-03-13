@@ -7,7 +7,7 @@
   },
   "peerDependencies": {
     "eip": "^1.0.2",
-    "rabbit-queue": "2.0.2"
+    "rabbit-queue": "^2.0.0"
   },
   "main": "build/lib/index.js",
   "typings": "build/index",
