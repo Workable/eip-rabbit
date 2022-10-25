@@ -1,31 +1,18 @@
 {
   "rules": {
     "class-name": true,
-    "curly": true,
+    "comment-format": [true],
+    "curly": [true, "ignore-same-line"],
     "eofline": true,
     "forin": true,
-    "indent": [
-      false
-    ],
+    "indent": [false],
     "label-position": true,
-    // "label-undefined": true,
-    "max-line-length": [
-      true,
-      140
-    ],
+    "max-line-length": [true, 140],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
-    // "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-empty": true,
     "no-eval": true,
@@ -34,7 +21,6 @@
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
     "no-unused-variable": true,
-    // "no-unreachable": true,
     "no-use-before-declare": true,
     "one-line": [
       true,
@@ -43,16 +29,10 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [
-      true,
-      "single"
-    ],
+    "quotemark": [true, "single"],
     "radix": true,
     "semicolon": true,
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "variable-name": false,
     "whitespace": [
       true,
