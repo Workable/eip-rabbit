@@ -7,7 +7,7 @@
   },
   "peerDependencies": {
     "eip": "^1.0.2",
-    "rabbit-queue": "^2.3.0"
+    "rabbit-queue": ">=2.3.0"
   },
   "main": "build/lib/index.js",
   "typings": "build/index",
@@ -19,15 +19,15 @@
     "watch": "tsc -w -p .",
     "prepublishOnly": "npm test",
     "pretest": "tslint src/*.ts && npm run build",
-    "test": "istanbul test ./node_modules/.bin/_mocha build/test -- --recursive -R spec",
-    "posttest": "remap-istanbul -i coverage/coverage.json -o coverage/lcov-report -t html"
+    "test": "nyc --reporter=text-summary ./node_modules/.bin/_mocha build/test -- --recursive -R spec --exit",
+    "posttest": "nyc report --reporter=html --reporter=lcov && nyc check-coverage --statements 80 --branches 70 --functions 80 --lines 80"
   },
   "author": "Nikos Kostoulas <kostoulas@workable.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/amqplib": "0.5.1",
+    "@types/amqplib": "^0.5.13",
     "@types/log4js": "0.0.32",
-    "@types/mocha": "2.2.38",
+    "@types/mocha": "^5.2.7",
     "@types/node": "6.0.40",
     "@types/node-uuid": "0.0.28",
     "@types/should": "8.1.30",
@@ -36,15 +36,14 @@
     "@types/supertest": "2.0.0",
     "@types/uuid": "2.0.29",
     "eip": "^1.6.4",
-    "istanbul": "0.4.5",
-    "mocha": "3.2.0",
-    "rabbit-queue": "^2.3.0",
-    "remap-istanbul": "0.8.4",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rabbit-queue": "^5.4.1",
     "should": "11.2.0",
     "sinon": "1.17.7",
     "source-map-support": "^0.4.5",
-    "tslint": "4.5.1",
-    "typescript": "^2.2.1"
+    "tslint": "^6.1.3",
+    "typescript": "4.1.6"
   },
   "repository": {
     "type": "git",
