@@ -17,8 +17,8 @@
     "build": "tsc -p .",
     "prewatch": "npm run clean",
     "watch": "tsc -w -p .",
-    "prepublishOnly": "npm test",
     "pretest": "tslint src/*.ts && npm run build",
+    "prepublishOnly": "npm test",
     "test": "nyc --reporter=text-summary ./node_modules/.bin/_mocha build/test -- --recursive -R spec --exit",
     "posttest": "nyc report --reporter=html --reporter=lcov && nyc check-coverage --statements 80 --branches 70 --functions 80 --lines 80"
   },
